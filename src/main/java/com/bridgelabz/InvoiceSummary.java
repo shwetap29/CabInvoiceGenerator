@@ -3,9 +3,9 @@ package com.bridgelabz;
 import java.util.Objects;
 
 public class InvoiceSummary {
-    private  double averageFarePerRide;
-    public int numberOfRides;
-    public double totalFare;
+    private final double averageFarePerRide;
+    private final int numberOfRides;
+    private final double totalFare;
 
     public InvoiceSummary(int length, double totalFare) {
         this.numberOfRides = length;
@@ -21,18 +21,5 @@ public class InvoiceSummary {
         return numberOfRides == summary.numberOfRides &&
                 Double.compare(summary.totalFare, totalFare) == 0 &&
                 Double.compare(summary.averageFarePerRide, averageFarePerRide) == 0;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(numberOfRides, totalFare, averageFarePerRide);
-    }
-    @Override
-    public String toString() {
-        return "InvoiceSummary{" +
-                "numberOfRides=" + numberOfRides +
-                ", totalFare=" + totalFare +
-                ", averageFarePerRide=" + averageFarePerRide +
-                '}';
     }
 }
